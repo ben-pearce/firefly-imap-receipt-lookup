@@ -1,0 +1,14 @@
+imap:
+  host: {{ .Env.SMTP_HOST }}
+  port: {{ .Env.SMTP_PORT }}
+  user: {{ .Env.SMTP_USER }}
+  password: {{ .Env.SMTP_PASSWORD }}
+logging:
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  level: {{ default .Env.LOGGING_LEVEL "DEBUG"}}
+firefly:
+  host: {{ .Env.FIREFLY_BASE_URL }}
+  access_token: {{ default .Env.FIREFLY_TOKEN "./firefly-token" }}
+mailbox: {{ .Env.MAILBOX }}
+processed_mailbox: {{ default .Env.PROCESSED_MAILBOX "" }}
+attachment_extensions: {{ default .Env.ATTACHMENT_EXTENSIONS "['.pdf', '.jpeg', '.jpg', '.png']" }}
