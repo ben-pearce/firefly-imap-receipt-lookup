@@ -5,7 +5,7 @@ imap:
   password: {{ .Env.IMAP_PASSWORD }}
 logging:
   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-  level: {{ default .Env.LOGGING_LEVEL "DEBUG"}}
+  level: {{ default .Env.LOGGING_LEVEL "INFO"}}
 firefly:
   host: {{ .Env.FIREFLY_BASE_URL }}
   access_token: {{ default .Env.FIREFLY_TOKEN "./firefly-token" }}
