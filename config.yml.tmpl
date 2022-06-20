@@ -1,8 +1,8 @@
 imap:
-  host: {{ .Env.SMTP_HOST }}
-  port: {{ .Env.SMTP_PORT }}
-  user: {{ .Env.SMTP_USER }}
-  password: {{ .Env.SMTP_PASSWORD }}
+  host: {{ .Env.IMAP_HOST }}
+  port: {{ default .Env.IMAP_PORT "993" }}
+  user: {{ .Env.IMAP_USER }}
+  password: {{ .Env.IMAP_PASSWORD }}
 logging:
   format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
   level: {{ default .Env.LOGGING_LEVEL "DEBUG"}}
