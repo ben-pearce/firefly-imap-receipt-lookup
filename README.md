@@ -56,7 +56,7 @@ The best way to continuously import mail is via cron. Run once per-day with a da
 
 ```shell
 # Write Firefly III token to file
-echo "FIREFLY_TOKEN_HERE" > firefly-token
+echo -n "FIREFLY_TOKEN_HERE" > firefly-token
 
 # Write a script which executes the importer
 cat <<EOT >> firl.sh
